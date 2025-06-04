@@ -56,5 +56,7 @@ python app.py
 ## Author
 
 Isaac Biggs
+
 CS + GGIS Major, University of Illinois Urbana-Champaign
+
 Data sources: City of Chicago Data Portal, U.S. Census Bureau
