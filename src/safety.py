@@ -1,3 +1,4 @@
+# Objective crime weights (affects safety score)
 CRIME_WEIGHTS = {
     "HOMICIDE": 10,
     "CRIMINAL SEXUAL ASSAULT": 9,
@@ -20,21 +21,16 @@ CRIME_WEIGHTS = {
 def compute_safety_score(crime_list, population):
     if not crime_list or not population:
         return 0
-
     weighted_total = 0
     for crime in crime_list:
-        crime_type = str(crime["Primary Type"]).upper() if "Primary Type" in crime else "OTHER OFFENSE"
+        crime_type = str(crime["Primary Type"]) if "Primary Type" in crime else "OTHER OFFENSE"
         weight = CRIME_WEIGHTS.get(crime_type, 1)
         weighted_total += weight
-
-    print(f"DEBUG Weighted total: {weighted_total}")
-    print(f"DEBUG Population: {population}")
-    
-    # Weighted incidents per 1000 residents
-    risk_ratio = (weighted_total / population) * 1000
-    
+    # Weighted incidents per 1k residents
+    risk_ratio = (weighted_total / population) * 1000 
+    # Cap on how bad crime gets
     max_risk = 2000
+    # Sets final score between 0 and 100
     normalized = 1 - min(risk_ratio / max_risk, 1)
-
     score = round(normalized * 100, 2)
     return round(score, 2)
