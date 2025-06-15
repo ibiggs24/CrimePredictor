@@ -3,7 +3,7 @@ import pandas as pd
 
 all_data = []
 base_url = "https://api.census.gov/data/2020/dec/pl"
-key = "ed4e30a96252d67ba2556be9732ce1d2f78cdd7f"
+key = "my-key"
 
 counties = ["031"] 
 
