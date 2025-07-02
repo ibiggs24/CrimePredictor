@@ -12,7 +12,7 @@ for county in counties:
         "get": "P1_001N,GEO_ID",
         "for": "block group:*",
         "in": f"state:17 county:{county}",
-        "key": "ed4e30a96252d67ba2556be9732ce1d2f78cdd7f"
+        "key": key
     }
     response = requests.get(base_url, params=params)
     if response.status_code == 200:
