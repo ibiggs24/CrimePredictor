@@ -21,7 +21,7 @@ A Python + React web app for visualizing crime data around a user-specified addr
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/ibiggs24/CrimePredictor.git
+git clone https://github.com/ibiggs24/CrimeVisualizer.git
 cd CrimeVisualization
 ```
 
